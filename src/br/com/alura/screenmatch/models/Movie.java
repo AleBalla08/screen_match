@@ -1,28 +1,13 @@
 package br.com.alura.screenmatch.models;
 
-public class Movie {
-    String name;
-    int releaseYear;
-    boolean planIncluded;
-    private double avaliationSum;
-    private int totalAvaliations;
-    int inMinutesDuration;
+public class Movie extends Title {
+    private String diretor;
 
-    public int getTotalAvaliations(){
-        return totalAvaliations;
+    public String getDiretor() {
+        return diretor;
     }
 
-    public void showMovieInfos() {
-        System.out.println("Nome: " + name);
-        System.out.println("Ano de Lançamento: " + releaseYear);
-    }
-
-    public void madeAvaliation(double avaliation) {
-        avaliationSum += avaliation;
-        totalAvaliations++;
-    }
-
-    public double returnAverage() {
-        return avaliationSum / totalAvaliations;
+    public void setDiretor(String diretor) {
+        this.diretor = diretor;
     }
 }

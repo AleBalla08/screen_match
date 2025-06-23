@@ -5,10 +5,9 @@ import br.com.alura.screenmatch.models.Movie;
 public class Main {
     public static void main(String[] args) {
         Movie myMovie = new Movie();
-        myMovie.name = "Django: Unchained";
-        myMovie.releaseYear = 2013;
-        myMovie.planIncluded = true;
-        myMovie.inMinutesDuration = 160;
+        myMovie.setName("Django: Unchained");
+        myMovie.setReleaseYear(2013);
+        myMovie.setInMinutesDuration(160);
 
         myMovie.showMovieInfos();
         myMovie.madeAvaliation(5);
