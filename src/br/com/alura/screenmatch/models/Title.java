@@ -36,15 +36,15 @@ public class Title {
     }
 
     public void setReleaseYear(int year) {
-        this.releaseYear = year;
+        releaseYear = year;
     }
 
     public void setInMinutesDuration(int mins) {
-        this.inMinutesDuration = mins;
+        inMinutesDuration = mins;
     }
 
     public void setPlanIncluded(boolean included) {
-        this.planIncluded = included;
+        planIncluded = included;
     }
 
     public void showMovieInfos() {

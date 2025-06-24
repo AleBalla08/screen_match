@@ -6,7 +6,7 @@ public class Series extends Title{
     private int episodesPerSeason;
     private int minutesPerEpisode;
 
-    public boolean isActive() {e
+    public boolean isActive() {
         return active;
     }
 
@@ -36,5 +36,10 @@ public class Series extends Title{
 
     public void setMinutesPerEpisode(int minutesPerEpisode) {
         this.minutesPerEpisode = minutesPerEpisode;
+    }
+
+    @Override
+    public int getInMinutesDuration() {
+        return Seasons * episodesPerSeason * minutesPerEpisode;
     }
 }

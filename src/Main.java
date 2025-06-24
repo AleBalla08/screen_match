@@ -1,4 +1,6 @@
+import br.com.alura.screenmatch.calcules.TimeCalculator;
 import br.com.alura.screenmatch.models.Movie;
+import br.com.alura.screenmatch.models.Series;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -14,6 +16,23 @@ public class Main {
         myMovie.madeAvaliation(10);
         System.out.println(myMovie.getTotalAvaliations());
         System.out.println(myMovie.returnAverage());
+
+        Movie anotherMovie = new Movie();
+        anotherMovie.setName("O paizão");
+        anotherMovie.setInMinutesDuration(200);
+
+        Series mySerie = new Series();
+
+        mySerie.setName("The day of jackal");
+        mySerie.setSeasons(3);
+        mySerie.setEpisodesPerSeason(10);
+        mySerie.setMinutesPerEpisode(50);
+        System.out.println("Duração total da serie: " + mySerie.getInMinutesDuration());
+
+        TimeCalculator calc = new TimeCalculator();
+        calc.includes(myMovie);
+        calc.includes(anotherMovie);
+        System.out.println("Tempo total da calc: " + calc.getTotalTime());
 
     }
 }
