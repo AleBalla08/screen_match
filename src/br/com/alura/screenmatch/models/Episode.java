@@ -1,9 +1,18 @@
 package br.com.alura.screenmatch.models;
 
-public class Episode {
+public class Episode implements Classifiable{
     private int number;
     private String name;
     private Series series;
+    private int totalViews;
+
+    public int getTotalViews() {
+        return totalViews;
+    }
+
+    public void setTotalViews(int totalViews) {
+        this.totalViews = totalViews;
+    }
 
     public int getNumber() {
         return number;
@@ -27,5 +36,15 @@ public class Episode {
 
     public void setSeries(Series series) {
         this.series = series;
+    }
+
+
+    @Override
+    public int getClassification() {
+        if (totalViews > 100) {
+            return 4;
+        } else {
+            return 2;
+        }
     }
 }

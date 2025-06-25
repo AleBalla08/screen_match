@@ -1,6 +1,8 @@
 import br.com.alura.screenmatch.calcules.TimeCalculator;
+import br.com.alura.screenmatch.models.Episode;
 import br.com.alura.screenmatch.models.Movie;
 import br.com.alura.screenmatch.models.Series;
+import br.com.alura.screenmatch.models.RecommendationFilter;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -33,6 +35,17 @@ public class Main {
         calc.includes(myMovie);
         calc.includes(anotherMovie);
         System.out.println("Tempo total da calc: " + calc.getTotalTime());
+
+        RecommendationFilter myFilter = new RecommendationFilter();
+        myFilter.filter(myMovie);
+
+        Episode myEp = new Episode();
+        myEp.setNumber(1);
+        myEp.setName("piloto");
+        myEp.setSeries(mySerie);
+        myEp.setTotalViews(300);
+        myFilter.filter(myEp);
+
 
     }
 }
