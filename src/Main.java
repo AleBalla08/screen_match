@@ -4,6 +4,8 @@ import br.com.alura.screenmatch.models.Movie;
 import br.com.alura.screenmatch.models.Series;
 import br.com.alura.screenmatch.models.RecommendationFilter;
 
+import java.util.ArrayList;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -21,6 +23,7 @@ public class Main {
 
         Movie anotherMovie = new Movie();
         anotherMovie.setName("O paizão");
+        anotherMovie.setReleaseYear(1999);
         anotherMovie.setInMinutesDuration(200);
 
         Series mySerie = new Series();
@@ -45,6 +48,21 @@ public class Main {
         myEp.setSeries(mySerie);
         myEp.setTotalViews(300);
         myFilter.filter(myEp);
+
+        var thirdMovie = new Movie();
+        thirdMovie.setName("Bastardos Inglorios");
+        thirdMovie.madeAvaliation(9);
+        thirdMovie.setReleaseYear(2009);
+        thirdMovie.setInMinutesDuration(180);
+
+        ArrayList<Movie> moviesList = new ArrayList<>();
+        moviesList.add(myMovie);
+        moviesList.add(anotherMovie);
+        moviesList.add(thirdMovie);
+
+        System.out.println("Tamanho da lista: " + moviesList.size());
+        System.out.println("Primeiro filme: " + moviesList.get(0).getName());
+        System.out.println(moviesList);
 
 
     }
