@@ -1,3 +1,5 @@
+package br.com.alura.screenmatch.Main;
+
 import br.com.alura.screenmatch.calcules.TimeCalculator;
 import br.com.alura.screenmatch.models.Episode;
 import br.com.alura.screenmatch.models.Movie;
@@ -10,9 +12,7 @@ import java.util.ArrayList;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Movie myMovie = new Movie();
-        myMovie.setName("Django: Unchained");
-        myMovie.setReleaseYear(2013);
+        Movie myMovie = new Movie("Django: Unchained", 2013);
         myMovie.setInMinutesDuration(160);
 
         myMovie.showMovieInfos();
@@ -21,14 +21,11 @@ public class Main {
         System.out.println(myMovie.getTotalAvaliations());
         System.out.println(myMovie.returnAverage());
 
-        Movie anotherMovie = new Movie();
-        anotherMovie.setName("O paizão");
-        anotherMovie.setReleaseYear(1999);
+        Movie anotherMovie = new Movie("O paizão",1999);
         anotherMovie.setInMinutesDuration(200);
 
-        Series mySerie = new Series();
+        Series mySerie = new Series("The day of jackal", 2023);
 
-        mySerie.setName("The day of jackal");
         mySerie.setSeasons(3);
         mySerie.setEpisodesPerSeason(10);
         mySerie.setMinutesPerEpisode(50);
@@ -49,10 +46,8 @@ public class Main {
         myEp.setTotalViews(300);
         myFilter.filter(myEp);
 
-        var thirdMovie = new Movie();
-        thirdMovie.setName("Bastardos Inglorios");
+        var thirdMovie = new Movie("Bastardos Inglorios", 2009);
         thirdMovie.madeAvaliation(9);
-        thirdMovie.setReleaseYear(2009);
         thirdMovie.setInMinutesDuration(180);
 
         ArrayList<Movie> moviesList = new ArrayList<>();

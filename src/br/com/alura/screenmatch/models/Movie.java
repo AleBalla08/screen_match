@@ -1,6 +1,11 @@
 package br.com.alura.screenmatch.models;
 
 public class Movie extends Title implements Classifiable {
+
+    public Movie(String name, int releaseYear) {
+        super(name, releaseYear);
+    }
+
     private String diretor;
 
     public String getDiretor() {
