@@ -5,6 +5,7 @@ import br.com.alura.screenmatch.models.Series;
 import br.com.alura.screenmatch.models.Title;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MainWithArrays {
     public static void main(String[] args) {
@@ -23,5 +24,8 @@ public class MainWithArrays {
         for(i=0; i < list.size(); i++) {
             System.out.println(list.get(i));
         }
+
+        Collections.sort(list);
+        System.out.println(list);
     }
 }
