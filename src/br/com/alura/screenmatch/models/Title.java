@@ -1,16 +1,41 @@
 package br.com.alura.screenmatch.models;
 
+import br.com.alura.screenmatch.Main.OmdbTitle;
+import br.com.alura.screenmatch.exceptions.ConvertYearException;
+import com.google.gson.annotations.SerializedName;
+
+import static java.lang.Integer.parseInt;
+
 public class Title implements Comparable<Title> {
+
+    @SerializedName("Title")
     private String name;
+
+    @SerializedName("Year")
     private int releaseYear;
+
+    private int inMinutesDuration;
+
     private boolean planIncluded;
     private double avaliationSum;
     private int totalAvaliations;
-    private int inMinutesDuration;
+
+
 
     public Title(String name, int releaseYear) {
         this.name = name;
         this.releaseYear = releaseYear;
+    }
+
+    public Title(OmdbTitle myOmdbTitle) {
+        this.name = myOmdbTitle.title();
+
+        if (myOmdbTitle.year().length() > 4){
+            throw new ConvertYearException("Não foi possível converter o ano " + myOmdbTitle.year() + ", Pois ele possui mais de 04 caracteres...");
+        }
+
+        this.releaseYear =  Integer.parseInt(myOmdbTitle.year());
+        this.inMinutesDuration = Integer.parseInt(myOmdbTitle.runtime().replace("min", "").strip());
     }
 
     //    GETTERS
@@ -68,5 +93,10 @@ public class Title implements Comparable<Title> {
     @Override
     public int compareTo(Title title) {
         return this.getName().compareTo(title.getName());
+    }
+
+    @Override
+    public String toString() {
+        return "Nome: " + name + " (" + releaseYear + ")" + " - " + inMinutesDuration + " min";
     }
 }
