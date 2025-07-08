@@ -1,0 +1,26 @@
+[
+  {
+    "Title": "Matrix",
+    "Year": 1993,
+    "InMinutesDuration": 60,
+    "PlanIncluded": false,
+    "AvaliationSum": 0.0,
+    "TotalAvaliations": 0
+  },
+  {
+    "Title": "The Maze Runner",
+    "Year": 2014,
+    "InMinutesDuration": 113,
+    "PlanIncluded": false,
+    "AvaliationSum": 0.0,
+    "TotalAvaliations": 0
+  },
+  {
+    "Title": "Django Unchained",
+    "Year": 2012,
+    "InMinutesDuration": 165,
+    "PlanIncluded": false,
+    "AvaliationSum": 0.0,
+    "TotalAvaliations": 0
+  }
+]
